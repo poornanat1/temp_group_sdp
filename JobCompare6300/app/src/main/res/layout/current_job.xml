@@ -68,7 +68,7 @@
         android:layout_below="@id/cityEditText"
         android:layout_marginTop="8dp"
         android:hint="Cost of Living Index"
-        android:inputType="numberDecimal"
+        android:inputType="number"
         android:minHeight="48dp" />
 
     <EditText
@@ -78,7 +78,7 @@
         android:layout_below="@id/costOfLivingEditText"
         android:layout_marginTop="8dp"
         android:hint="Yearly Salary"
-        android:inputType="numberDecimal"
+        android:inputType="number"
         android:minHeight="48dp" />
 
     <EditText
@@ -88,7 +88,7 @@
         android:layout_below="@id/salaryEditText"
         android:layout_marginTop="8dp"
         android:hint="Yearly Bonus"
-        android:inputType="numberDecimal"
+        android:inputType="number"
         android:minHeight="48dp" />
 
     <EditText
@@ -98,7 +98,7 @@
         android:layout_below="@id/bonusEditText"
         android:layout_marginTop="8dp"
         android:hint="Training &amp; Dev Fund"
-        android:inputType="numberDecimal"
+        android:inputType="number"
         android:minHeight="48dp" />
 
     <EditText
@@ -118,8 +118,7 @@
         android:layout_below="@id/leaveTimeEditText"
         android:layout_marginTop="8dp"
         android:inputType="number"
-        android:enabled="false"
-        android:text="No. of Telework Days Per Week"
+        android:text="1"
         android:minHeight="48dp"
         android:prompt="@string/telework_prompt" />
 

@@ -2,6 +2,12 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="AdjustSettingsTest">
+        <State />
+      </entry>
+      <entry key="ComparisonSettingDaoTest">
+        <State />
+      </entry>
       <entry key="app">
         <State>
           <targetSelectedWithDropDown>
@@ -10,13 +16,16 @@
               <deviceKey>
                 <Key>
                   <type value="VIRTUAL_DEVICE_PATH" />
-                  <value value="$USER_HOME$/.android/avd/Pixel_6a_API_33.avd" />
+                  <value value="$USER_HOME$/.android/avd/Pixel_6_API_33.avd" />
                 </Key>
               </deviceKey>
             </Target>
           </targetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2024-07-07T00:09:42.484931Z" />
+          <timeTargetWasSelectedWithDropDown value="2024-06-29T18:10:48.687965Z" />
         </State>
+      </entry>
+      <entry key="testUIComponentsCurrentJob()">
+        <State />
       </entry>
     </value>
   </component>

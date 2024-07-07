@@ -24,7 +24,7 @@ public class AdjustSettings extends AppCompatActivity {
 
         // getting the db instance
         JobComparatorDatabase db = JobComparatorDatabase.getInstance(this);
-        settingDao = db.setting();
+        settingDao = db.settingDao();
 
         Button mainMenu = findViewById(R.id.main_menu_button);
         mainMenu.setOnClickListener(new View.OnClickListener() {

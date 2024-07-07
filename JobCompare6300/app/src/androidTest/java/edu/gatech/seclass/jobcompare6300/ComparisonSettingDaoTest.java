@@ -17,7 +17,7 @@ public class ComparisonSettingDaoTest {
         db = Room.inMemoryDatabaseBuilder(ApplicationProvider.getApplicationContext(), JobComparatorDatabase.class)
                 .allowMainThreadQueries()
                 .build();
-        settingDao = db.setting();
+        settingDao = db.settingDao();
     }
     @After
     public void closeDb() {

@@ -4,13 +4,11 @@ import android.content.Context;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-import androidx.room.migration.Migration;
-import androidx.sqlite.db.SupportSQLiteDatabase;
-@Database(entities = {Job.class, ComparisonSetting.class}, version = 3,exportSchema = false)
+@Database(entities = {Job.class, ComparisonSetting.class}, version = 4,exportSchema = false)
 public abstract class JobComparatorDatabase extends RoomDatabase {
 
     public abstract JobDao jobDao();
-    public abstract ComparisonSettingDao setting();
+    public abstract ComparisonSettingDao settingDao();
     private static volatile JobComparatorDatabase DB;
 
     static JobComparatorDatabase getInstance(Context context) {

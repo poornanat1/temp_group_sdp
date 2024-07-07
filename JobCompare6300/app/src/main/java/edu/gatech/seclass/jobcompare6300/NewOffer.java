@@ -5,20 +5,47 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-//import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-//import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-//import java.util.List;
-
 public class NewOffer extends AppCompatActivity {
 
     private JobComparatorDatabase db;
+    private Job currentOffer;
+
+    public ComparisonSetting getComparisonSetting() {
+        return comparisonSetting;
+    }
+
+    public void setComparisonSetting(ComparisonSetting comparisonSetting) {
+        this.comparisonSetting = comparisonSetting;
+    }
+
+    private ComparisonSetting comparisonSetting;
+
+    public Job getCurrentJob() {
+        return currentJob;
+    }
+
+    public void setCurrentJob(Job currentJob) {
+        this.currentJob = currentJob;
+    }
+
+    private Job currentJob;
+
+    public Job getCurrentOffer() {
+        return currentOffer;
+    }
+
+    public void setCurrentOffer(Job currentOffer) {
+        this.currentOffer = currentOffer;
+    }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +81,48 @@ public class NewOffer extends AppCompatActivity {
             }
         });
 
+        Button enterNewJobOffer = findViewById(R.id.newJobButton);
+        enterNewJobOffer.setOnClickListener(new View.OnClickListener() {
+            void cancelEverything(ViewGroup viewGroup){
+                for (int i = 0; i < viewGroup.getChildCount(); i++) {
+                    View child = viewGroup.getChildAt(i);
+                    if (child instanceof EditText) {
+                        ((EditText) child).setText("");
+                    } else if (child instanceof ViewGroup) {
+                        cancelEverything((ViewGroup) child);
+                    }
+                }
+            }
+            @Override
+            public void onClick(View v) {
+                ViewGroup currentJobViewGroup = findViewById(R.id.new_offer);
+                cancelEverything(currentJobViewGroup);
+            }
+        });
+
+        Button compareWithCurrentJob = findViewById(R.id.compareButton);
+
+        compareWithCurrentJob.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                ViewGroup currentJobViewGroup = findViewById(R.id.new_offer);
+                Intent intent = new Intent(NewOffer.this, CompareResults.class);
+
+                if(currentOffer != null && currentJob != null){
+                    intent.putExtra("job_1", currentOffer.getId());
+                    intent.putExtra("job_2", currentJob.getId());
+                    intent.putExtra("rank_1", Utility.calculateRankOfJob(currentOffer,getComparisonSetting()));
+                    intent.putExtra("rank_2", Utility.calculateRankOfJob(currentJob, getComparisonSetting()));
+                    startActivity(intent);
+                }else{
+                    runOnUiThread(() -> {
+                        Toast.makeText(NewOffer.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                    });
+                }
+            }
+        });
+
         Button save = findViewById(R.id.saveButton);
         save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +140,6 @@ public class NewOffer extends AppCompatActivity {
 
                 new Thread(() -> {
                     Job job = new Job();
-                    //Primary keys in the job DB
                     String titleString = title.getText().toString().trim();
                     String companyString = company.getText().toString().trim();
                     String stateString = state.getText().toString().trim();
@@ -116,10 +184,15 @@ public class NewOffer extends AppCompatActivity {
                         job.setTeleworkDaysPerWeek(teleworkDaysPerWeek);
 
                         job.setCurrentJob(false);
-                        Job jobInDB = db.jobDao().getJobByCompositePK(titleString,companyString,cityString,stateString);
+                        Job jobInDB = db.jobDao().getDuplicatedJob(titleString, stateString, cityString, companyString);
                         if(jobInDB == null){
                             db.jobDao().insertJob(job);
-                            // show the current job is saved
+                            jobInDB = db.jobDao().getDuplicatedJob(titleString, stateString, cityString, companyString);
+                            setCurrentOffer(jobInDB);
+                            Job currentJob = db.jobDao().getCurrentJobs();
+                            ComparisonSetting comparisonSetting = db.settingDao().getSetting();
+                            setCurrentJob(currentJob);
+                            setComparisonSetting(comparisonSetting);
                             runOnUiThread(() -> {
                                 Toast.makeText(NewOffer.this, "A new job offer saved successfully!", Toast.LENGTH_SHORT).show();
                             });

@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -110,10 +111,18 @@ public class CurrentJob extends AppCompatActivity {
                     job.setCurrentJob(true);
                     if(jobExist){
                         db.jobDao().update(job);
+                        runOnUiThread(() -> {
+                            Toast.makeText(CurrentJob.this, "Current job was updated successfully!", Toast.LENGTH_SHORT).show();
+                        });
                     }else{
                         db.jobDao().insertJob(job);
+                        runOnUiThread(() -> {
+                            Toast.makeText(CurrentJob.this, "Current job was saved successfully!", Toast.LENGTH_SHORT).show();
+                        });
                     }
                 }).start();
+                Intent intent = new Intent(CurrentJob.this, MainActivity.class);
+                startActivity(intent);
             }
         });
     }

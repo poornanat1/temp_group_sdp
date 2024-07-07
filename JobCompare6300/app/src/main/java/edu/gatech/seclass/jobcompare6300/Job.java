@@ -1,13 +1,26 @@
 package edu.gatech.seclass.jobcompare6300;
 
+import android.os.Parcelable;
+
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "jobs", indices = {@Index(value={"isCurrentJob"},unique=false)},primaryKeys = {"title", "company","city","state"})
+@Entity(tableName = "jobs", indices = {@Index(value={"id"},unique=false)})
 public class Job {
-    // add a handler to handle nonnull for these Pks
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    @PrimaryKey(autoGenerate = true)
+    private long id;
+
     @NonNull
     private String title;
     @NonNull

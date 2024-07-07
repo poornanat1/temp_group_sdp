@@ -37,7 +37,7 @@
                 android:text="Rank"
                 android:textStyle="bold" />
             <TextView
-                android:text="Title at Company"
+                android:text="Company title"
                 android:textStyle="bold"
                 android:padding="8dp" />
         </TableRow>

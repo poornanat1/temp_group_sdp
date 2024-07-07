@@ -9,7 +9,6 @@ import androidx.room.Update;
 public interface ComparisonSettingDao {
     @Insert
     void insertComparisonSetting(ComparisonSetting comparisonSetting);
-    //The query will return null if it is empty
     @Query("SELECT * FROM ComparisonSetting LIMIT 1")
     ComparisonSetting getSetting();
     @Query("DELETE FROM ComparisonSetting")
