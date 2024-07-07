@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:id="@+id/new_offer"
+    >
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Job Offer"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:padding="16dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:background="#7E57C2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp" />
+
+    <EditText
+        android:id="@+id/titleEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleText"
+        android:layout_marginTop="8dp"
+        android:hint="Title"
+        android:singleLine="true"
+        android:maxLength="50"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/companyEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleEditText"
+        android:layout_marginTop="8dp"
+        android:singleLine="true"
+        android:hint="Company"
+        android:maxLength="50"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/stateSpinner"
+        android:layout_width="149dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/companyEditText"
+        android:layout_marginTop="8dp"
+        android:singleLine="true"
+        android:maxLength="20"
+        android:hint="State"
+        android:minHeight="48dp"
+        android:layout_toEndOf="@id/stateSpinner"
+        />
+
+    <EditText
+        android:id="@+id/cityEditText"
+        android:layout_width="149dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/companyEditText"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:maxLength="20"
+        android:layout_toEndOf="@id/stateSpinner"
+        android:hint="City"
+        android:singleLine="true"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/costOfLivingEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cityEditText"
+        android:layout_marginTop="8dp"
+        android:hint="Cost of Living Index"
+        android:inputType="number"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/salaryEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/costOfLivingEditText"
+        android:layout_marginTop="8dp"
+        android:hint="Yearly Salary"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/bonusEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/salaryEditText"
+        android:layout_marginTop="8dp"
+        android:hint="Yearly Bonus"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/trainingEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bonusEditText"
+        android:layout_marginTop="8dp"
+        android:hint="Training &amp; Dev Fund"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/leaveTimeEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/trainingEditText"
+        android:layout_marginTop="8dp"
+        android:hint="Leave Time"
+        android:inputType="number"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/teleworkDaysSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/leaveTimeEditText"
+        android:layout_marginTop="8dp"
+        android:inputType="number"
+        android:hint="Telework Days per Week"
+        android:minHeight="48dp"
+        android:prompt="@string/telework_prompt" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/teleworkDaysSpinner"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="5dp"
+            android:text="Save" />
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="Cancel" />
+
+        <Button
+            android:id="@+id/mainMenuButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="5dp"
+            android:text="Main Menu" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/newButtonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/teleworkDaysSpinner"
+        android:layout_marginTop="96dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/newJobButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="Enter New Job Offer"
+            android:background="@drawable/button_outline_style"
+            android:textColor="#7E57C2" />
+
+        <Button
+            android:id="@+id/compareButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="Compare with Current Job Offer"
+            android:background="@drawable/button_outline_style"
+            android:textColor="#7E57C2" />
+    </LinearLayout>
+
+</RelativeLayout>

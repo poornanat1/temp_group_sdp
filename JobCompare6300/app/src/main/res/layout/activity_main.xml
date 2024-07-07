@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@android:color/white"
+    tools:context=".MainActivity">
+
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Job Comparison App"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:background="#7E57C2"
+        android:padding="16dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="24dp" />
+
+    <!-- Enter/Edit Current Job Details Button -->
+    <Button
+        android:id="@+id/btn_edit_current_job"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="Enter/Edit Current Job Details"
+        android:textColor="@android:color/white"
+        android:padding="12dp"
+        android:layout_below="@+id/title"
+        android:background="@drawable/rounded_button" />
+
+    <!-- Enter Job Offers Button -->
+    <Button
+        android:id="@+id/btn_enter_job_offers"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="Enter Job Offer"
+        android:textColor="@android:color/white"
+        android:padding="12dp"
+        android:layout_below="@+id/btn_edit_current_job"
+        android:background="@drawable/rounded_button" />
+
+    <!-- Adjust Comparison Settings Button -->
+    <Button
+        android:id="@+id/btn_adjust_settings"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="Adjust Comparison Settings"
+        android:textColor="@android:color/white"
+        android:padding="12dp"
+        android:layout_below="@+id/btn_enter_job_offers"
+        android:background="@drawable/rounded_button" />
+
+    <!-- Compare Job Offers Button -->
+    <Button
+        android:id="@+id/btn_compare_offers"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_adjust_settings"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/rounded_button"
+        android:enabled="false"
+        android:padding="12dp"
+        android:text="Compare Job Offers"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

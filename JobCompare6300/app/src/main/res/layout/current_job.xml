@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:id="@+id/current_job"
+    >
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter or Edit Current Job"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:padding="16dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:background="#7E57C2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp" />
+
+    <EditText
+        android:id="@+id/titleEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleText"
+        android:layout_marginTop="8dp"
+        android:hint="Title"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/companyEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleEditText"
+        android:layout_marginTop="8dp"
+        android:hint="Company"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/stateSpinner"
+        android:layout_width="149dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/companyEditText"
+        android:layout_marginTop="8dp"
+        android:hint="State"
+        android:minHeight="48dp"
+        android:layout_toEndOf="@id/stateSpinner"
+        />
+
+    <EditText
+        android:id="@+id/cityEditText"
+        android:layout_width="149dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/companyEditText"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@id/stateSpinner"
+        android:hint="City"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/costOfLivingEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cityEditText"
+        android:layout_marginTop="8dp"
+        android:hint="Cost of Living Index"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/salaryEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/costOfLivingEditText"
+        android:layout_marginTop="8dp"
+        android:hint="Yearly Salary"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/bonusEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/salaryEditText"
+        android:layout_marginTop="8dp"
+        android:hint="Yearly Bonus"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/trainingEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bonusEditText"
+        android:layout_marginTop="8dp"
+        android:hint="Training &amp; Dev Fund"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/leaveTimeEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/trainingEditText"
+        android:layout_marginTop="8dp"
+        android:hint="Leave Time"
+        android:inputType="number"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/teleworkDaysSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/leaveTimeEditText"
+        android:layout_marginTop="8dp"
+        android:inputType="number"
+        android:enabled="false"
+        android:text="No. of Telework Days Per Week"
+        android:minHeight="48dp"
+        android:prompt="@string/telework_prompt" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/teleworkDaysSpinner"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="Save" />
+
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/teleworkDaysSpinner"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="32dp"
+        android:layout_toEndOf="@id/saveButton"
+        android:text="Cancel" />
+
+    <Button
+        android:id="@+id/mainMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/teleworkDaysSpinner"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="32dp"
+        android:layout_toEndOf="@id/cancelButton"
+        android:text="Main Menu" />
+
+</RelativeLayout>

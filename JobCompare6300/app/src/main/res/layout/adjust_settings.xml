@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FFFFFF"
+    android:id="@+id/adjust_comparison_settings_root">
+
+    <TextView
+        android:id="@+id/adjust_comparison_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adjust comparison settings"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:padding="16dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:background="#7E57C2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/yearly_salary_weight_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Yearly Salary Weight:"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <SeekBar
+            android:id="@+id/yearly_salary_seekbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:max="9"
+            android:padding="16dp"
+            android:progress="7"
+            android:thumbTint="#7E57C2"
+            android:progressTint="#7E57C2" />
+
+        <EditText
+            android:id="@+id/yearly_salary_weight_value"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:enabled="false"
+            android:text="7"
+            android:textColor="@android:color/black"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/yearly_bonus_weight_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Yearly Bonus Weight:"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <SeekBar
+            android:id="@+id/yearly_bonus_seekbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:max="9"
+            android:padding="16dp"
+            android:progress="7"
+            android:thumbTint="#7E57C2"
+            android:progressTint="#7E57C2" />
+
+        <EditText
+            android:id="@+id/yearly_bonus_weight_value"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:enabled="false"
+            android:text="7"
+            android:textColor="@android:color/black"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/training_dev_fund_weight_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Training &amp; Dev Fund Weight:"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <SeekBar
+            android:id="@+id/training_dev_fund_seekbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:max="9"
+            android:padding="16dp"
+            android:progress="7"
+            android:thumbTint="#7E57C2"
+            android:progressTint="#7E57C2" />
+
+        <EditText
+            android:id="@+id/training_dev_fund_weight_value"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:enabled="false"
+            android:text="7"
+            android:textColor="@android:color/black"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/leave_time_weight_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Leave Time Weight:"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <SeekBar
+            android:id="@+id/leave_time_seekbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:max="9"
+            android:padding="16dp"
+            android:progress="7"
+            android:thumbTint="#7E57C2"
+            android:progressTint="#7E57C2" />
+
+        <EditText
+            android:id="@+id/leave_time_weight_value"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:enabled="false"
+            android:text="7"
+            android:textColor="@android:color/black"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/telework_days_weight_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Telework Days / Week Weight"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+        <SeekBar
+            android:id="@+id/telework_days_seekbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:max="9"
+            android:padding="16dp"
+            android:progress="7"
+            android:thumbTint="#7E57C2"
+            android:progressTint="#7E57C2" />
+
+        <EditText
+            android:id="@+id/telework_days_weight_value"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:enabled="false"
+            android:text="7"
+            android:textColor="@android:color/black"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="32dp"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:textColor="@android:color/white"
+            android:backgroundTint="#7E57C2"
+            android:layout_marginRight="8dp" />
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textColor="@android:color/white"
+            android:backgroundTint="#7E57C2"
+            android:layout_marginRight="8dp" />
+
+        <Button
+            android:id="@+id/main_menu_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Main Menu"
+            android:textColor="@android:color/white"
+            android:backgroundTint="#7E57C2" />
+    </LinearLayout>
+
+</LinearLayout>

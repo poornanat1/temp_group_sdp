@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/compare_jobs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Compare Job Offers"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:padding="16dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:background="#7E57C2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Table Layout -->
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/compare_jobs"
+        android:stretchColumns="1"
+        android:background="#E0E0E0"
+        android:padding="16dp">
+
+        <!-- Table Header -->
+        <TableRow>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                android:text="Rank"
+                android:textStyle="bold" />
+            <TextView
+                android:text="Title at Company"
+                android:textStyle="bold"
+                android:padding="8dp" />
+        </TableRow>
+
+    </TableLayout>
+
+    <!-- Select Two Jobs to Compare -->
+    <TextView
+        android:id="@+id/selectHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tableLayout"
+        android:layout_marginTop="16dp"
+        android:text="Select Two Jobs to Compare"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- Job No. 1 Spinner -->
+    <Spinner
+        android:id="@+id/job1_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/selectHeader"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:minHeight="48dp" />
+
+    <!-- Job No. 2 Spinner -->
+    <Spinner
+        android:id="@+id/job2_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/job1_spinner"
+        android:layout_marginBottom="16dp"
+        android:minHeight="48dp" />
+
+    <!-- Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/job2_spinner"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/compare_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Compare" />
+
+        <Button
+            android:id="@+id/main_menu_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Main Menu" />
+    </LinearLayout>
+</RelativeLayout>
